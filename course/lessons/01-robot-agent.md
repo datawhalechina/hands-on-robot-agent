@@ -102,4 +102,4 @@
 
 - [MuJoCo 官方概览](https://mujoco.readthedocs.io/en/stable/overview.html)：了解物理仿真承担的职责。
 - [Code as Policies 项目](https://code-as-policies.github.io/)：语言模型生成程序、程序调用感知与控制接口的原始项目说明。
-- [Agent Fieldnotes 仓库说明](https://github.com/Glaz-j/agent-fieldnotes)：现有展厅材料的收录范围。
+- [动手学机器人 Agent 仓库说明](https://github.com/datawhalechina/hands-on-robot-agent)：现有展厅材料的收录范围。

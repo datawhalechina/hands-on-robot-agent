@@ -26,7 +26,7 @@ MuJoCo 的场景模型描述结构与参数，运行时状态保存关节位置�
 
 ## 第一步：取得课程代码
 
-先下载 [轻量课程实验包](../downloads/agent-fieldnotes-lab.zip) 并解压。用终端的 `cd` 命令进入解压后的外层文件夹：输入 `cd "你的解压文件夹路径"`，将引号里的文字替换成实际路径。我们把“能直接看到 `lab/` 文件夹的这一层”叫作实验根目录，它应该具有下面的结构：
+先下载 [轻量课程实验包](../downloads/hands-on-robot-agent-lab.zip) 并解压。用终端的 `cd` 命令进入解压后的外层文件夹：输入 `cd "你的解压文件夹路径"`，将引号里的文字替换成实际路径。我们把“能直接看到 `lab/` 文件夹的这一层”叫作实验根目录，它应该具有下面的结构：
 
 ```text
 实验根目录/       ← 终端停在这里
@@ -41,8 +41,8 @@ MuJoCo 的场景模型描述结构与参数，运行时状态保存关节位置�
 如果希望同时取得完整网站与案例媒体，也可以选择克隆仓库；完整资源约数百 MB：
 
 ```sh
-git clone https://github.com/Glaz-j/agent-fieldnotes.git
-cd agent-fieldnotes
+git clone https://github.com/datawhalechina/hands-on-robot-agent.git
+cd hands-on-robot-agent
 ```
 
 下载轻量包与克隆完整仓库是两种取得代码的方法，选择一种即可。后面提到“根目录”均指包含 `lab/` 的这一层；命令中的 `lab/run.py` 就是从这里找到 `lab` 内的入口文件。
@@ -163,4 +163,4 @@ python lab/run.py baseline --seed 8 --out runs/baseline-seed8
 
 - [MuJoCo Python 安装与使用](https://mujoco.readthedocs.io/en/stable/python.html)
 - [Python 虚拟环境官方文档](https://docs.python.org/3/library/venv.html)
-- [课程实验包](https://github.com/Glaz-j/agent-fieldnotes/tree/main/lab)
+- [课程实验包](https://github.com/datawhalechina/hands-on-robot-agent/tree/main/lab)

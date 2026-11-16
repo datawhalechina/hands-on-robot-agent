@@ -157,6 +157,6 @@ python inspect_ch08.py
 
 ## 参考
 
-- [本课程颜色定位实现](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/run.py)
+- [本课程颜色定位实现](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/run.py)
 - [OpenCV 相机投影与几何说明](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html)
 - [MuJoCo Python 渲染接口](https://mujoco.readthedocs.io/en/3.3.7/python.html)

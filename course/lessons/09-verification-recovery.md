@@ -172,5 +172,5 @@ python lab/run.py evaluate --seeds 5 --out runs/ch09-evaluation
 
 ## 参考
 
-- [本课程控制器与成功判据](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/run.py)
+- [本课程控制器与成功判据](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/run.py)
 - [MemS 目标移动展厅案例](../gallery.html#demo-mems-target-shift-libero-three)：阅读更复杂的感知与记忆系统时，沿用本章的证据检查方法；本实验不等于复现该系统。

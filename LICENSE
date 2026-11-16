@@ -1,4 +1,4 @@
-# Agent Fieldnotes 许可与适用范围
+# 动手学机器人 Agent 许可与适用范围
 
 项目负责人吴昭烨（Glaz-j）于 2026-11-07 确认以下方案。本仓库按内容类型分别授权，不以单一许可覆盖所有文件。
 
@@ -15,7 +15,7 @@
 完整条款：`LICENSES/CC-BY-NC-SA-4.0.txt`
 官方文本：https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
 
-署名可采用：“Agent Fieldnotes — 吴昭烨（Glaz-j），https://github.com/Glaz-j/agent-fieldnotes ，CC BY-NC-SA 4.0”。使用时还应依完整条款保留相关声明、标明修改，并保留所用材料中另列的作者署名。此示例不增加许可条款以外的要求。
+署名可采用：“动手学机器人 Agent — 吴昭烨（Glaz-j），https://github.com/datawhalechina/hands-on-robot-agent ，CC BY-NC-SA 4.0”。使用时还应依完整条款保留相关声明、标明修改，并保留所用材料中另列的作者署名。此示例不增加许可条款以外的要求。
 
 ## 二、原创软件与网页实现：MIT
 

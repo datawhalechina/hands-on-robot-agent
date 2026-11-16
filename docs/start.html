@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="通过十六章循序渐进的教程和可运行的 MuJoCo 实验，学习机器人 Agent 的感知、记忆、技能、决策与评测。"><meta name="theme-color" content="#f3f4ee"><title>开始之前：终端与 Python · Agent Fieldnotes</title><link rel="stylesheet" href="course.css?v=novice-onramp"><script defer src="course.js?v=novice-onramp"></script></head><body data-lesson-count="16"><a class="skip" href="#main">跳到正文</a><header class="topbar"><a class="brand" href="index.html"><b>af</b><span>Agent Fieldnotes<small>机器人 Agent · 从理解到动手</small></span></a><nav aria-label="主导航"><a href="index.html#curriculum">学习路线</a><a href="gallery.html">实验案例</a><a class="repo" href="https://github.com/Glaz-j/agent-fieldnotes">GitHub ↗</a></nav></header><main id="main" class="lesson-layout"><aside class="course-nav" aria-label="入门导航"><nav><a href="start.html" aria-current="page">开始之前 · 终端与 Python</a><a href="learn/01.html">第 1 章 · 理解机器人 Agent</a><a href="learn/02.html">第 2 章 · 安装与第一轮实验</a><a href="index.html#curriculum">查看完整 16 章</a></nav></aside><div class="reading"><header><div class="label">START HERE / 新手准备</div><h1>第一次用终端和 Python</h1><p>从一个能亲手核对的小程序开始，为机器人实验做好准备。</p></header><details class="toc-box"><summary>本页内容</summary><div class="toc">
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="通过十六章循序渐进的教程和可运行的 MuJoCo 实验，学习机器人 Agent 的感知、记忆、技能、决策与评测。"><meta name="theme-color" content="#f3f4ee"><title>开始之前：终端与 Python · 动手学机器人 Agent</title><link rel="stylesheet" href="course.css?v=novice-onramp"><script defer src="course.js?v=novice-onramp"></script></head><body data-lesson-count="16"><a class="skip" href="#main">跳到正文</a><header class="topbar"><a class="brand" href="index.html"><b>ra</b><span>动手学机器人 Agent<small>机器人 Agent · 从理解到动手</small></span></a><nav aria-label="主导航"><a href="index.html#curriculum">学习路线</a><a href="gallery.html">实验案例</a><a class="repo" href="https://github.com/datawhalechina/hands-on-robot-agent">GitHub ↗</a></nav></header><main id="main" class="lesson-layout"><aside class="course-nav" aria-label="入门导航"><nav><a href="start.html" aria-current="page">开始之前 · 终端与 Python</a><a href="learn/01.html">第 1 章 · 理解机器人 Agent</a><a href="learn/02.html">第 2 章 · 安装与第一轮实验</a><a href="index.html#curriculum">查看完整 16 章</a></nav></aside><div class="reading"><header><div class="label">START HERE / 新手准备</div><h1>第一次用终端和 Python</h1><p>从一个能亲手核对的小程序开始，为机器人实验做好准备。</p></header><details class="toc-box"><summary>本页内容</summary><div class="toc">
 <ul>
 <li><a href="#_1">选一个合适的起点</a></li>
 <li><a href="#1">1. 分清三个地方</a></li>
@@ -56,11 +56,11 @@
 <pre><code class="language-powershell">py --version
 </code></pre>
 <p>预期看到类似 <code>Python 3.12.16</code> 的一行。课程实测 Python 3.12；最后的小版本可以不同。若提示找不到命令，先按 <a href="https://docs.python.org/3.12/using/index.html">Python 3.12 官方安装指南</a> 选择对应系统安装，再重新打开终端。这里还不安装机器人依赖，第 2 章会建立专用环境。</p>
-<p>下载并解压 <a href="downloads/agent-fieldnotes-lab.zip">实验包</a>。在文件管理器中找到那个直接包含 <code>lab</code> 文件夹的位置。终端的“当前目录”就是它查找相对路径的起点。</p>
+<p>下载并解压 <a href="downloads/hands-on-robot-agent-lab.zip">实验包</a>。在文件管理器中找到那个直接包含 <code>lab</code> 文件夹的位置。终端的“当前目录”就是它查找相对路径的起点。</p>
 <p>在终端输入 <code>cd</code>，后面接上这个文件夹的完整路径；路径含空格时用英文双引号包住。例如，下面的 <code>你的用户名</code> 必须替换，不能照抄：</p>
-<pre><code class="language-sh">cd &quot;/Users/你的用户名/Downloads/agent-fieldnotes-lab&quot;
+<pre><code class="language-sh">cd &quot;/Users/你的用户名/Downloads/hands-on-robot-agent-lab&quot;
 </code></pre>
-<p>Windows 路径例子：<code>cd "C:\Users\你的用户名\Downloads\agent-fieldnotes-lab"</code>。不同解压软件生成的文件夹名字可能不同，以你看到的实际目录为准。</p>
+<p>Windows 路径例子：<code>cd "C:\Users\你的用户名\Downloads\hands-on-robot-agent-lab"</code>。不同解压软件生成的文件夹名字可能不同，以你看到的实际目录为准。</p>
 <p>macOS / Linux 用 <code>pwd</code> 查看当前目录、<code>ls</code> 列出其中的文件；PowerShell 对应 <code>Get-Location</code> 和 <code>Get-ChildItem</code>。<strong>检查点：列表里直接出现 <code>lab</code>。</strong> 如果直接看见 <code>run.py</code>，说明进到了 <code>lab</code> 里面，运行 <code>cd ..</code> 返回外层。</p>
 <h2 id="3">3. 写一个不依赖机器人的小程序</h2>
 <p>在这个外层文件夹新建 <code>first_check.py</code>，用代码编辑器或纯文本模式打开。确认文件名不是 <code>first_check.py.txt</code>。把下面代码保存进去：</p>
@@ -164,7 +164,7 @@ check 3
 </tr>
 </tbody>
 </table>
-<p>遇到卡点时，保存“哪章哪一步、操作系统、完整命令、预期结果、实际输出”。复制文字比只写“运行不了”更容易获得帮助。可使用 <a href="https://github.com/Glaz-j/agent-fieldnotes/issues/new?template=learner-feedback.yml">学习卡点反馈表</a>；发布前移除密钥和无关个人路径。</p>
+<p>遇到卡点时，保存“哪章哪一步、操作系统、完整命令、预期结果、实际输出”。复制文字比只写“运行不了”更容易获得帮助。可使用 <a href="https://github.com/datawhalechina/hands-on-robot-agent/issues/new?template=learner-feedback.yml">学习卡点反馈表</a>；发布前移除密钥和无关个人路径。</p>
 <h2 id="_2">准备好了，接下来怎么学</h2>
 <p>能运行小脚本、找到 <code>lab</code>、解释两个自查题，就可以进入 <a href="learn/01.html">第 1 章</a> 理解任务，再按 <a href="learn/02.html">第 2 章</a> 创建虚拟环境。第 3—5 章补观察、坐标与技能；第 6—9 章把它们连成可恢复的循环。第 8、12 章的图像实验可在渲染可用后补做。</p>
-<p>每次学习留下三行笔记：<strong>我原先预测什么 → 实际观察到什么 → 下一次只改变什么</strong>。这份记录会在第 15 章做对照实验时再次用到。</p></article><nav class="pager" aria-label="继续学习"><a href="index.html">← 学习路线</a><a href="learn/01.html">进入第 1 章 →</a></nav></div></main><footer class="footer"><span>Agent Fieldnotes · 在实验中学习机器人 Agent</span><span><a href="https://github.com/Glaz-j/agent-fieldnotes/blob/main/LICENSE">课程许可</a> · <a href="attributions.html">案例来源与许可</a> · <a href="https://github.com/Glaz-j/agent-fieldnotes/issues">问题与勘误</a> · <a href="https://glazwu.cn/zhaoye/">关于作者</a></span></footer></body></html>
+<p>每次学习留下三行笔记：<strong>我原先预测什么 → 实际观察到什么 → 下一次只改变什么</strong>。这份记录会在第 15 章做对照实验时再次用到。</p></article><nav class="pager" aria-label="继续学习"><a href="index.html">← 学习路线</a><a href="learn/01.html">进入第 1 章 →</a></nav></div></main><footer class="footer"><span>动手学机器人 Agent · 在实验中学习机器人 Agent</span><span><a href="https://github.com/datawhalechina/hands-on-robot-agent/blob/main/LICENSE">课程许可</a> · <a href="attributions.html">案例来源与许可</a> · <a href="https://github.com/datawhalechina/hands-on-robot-agent/issues">问题与勘误</a> · <a href="https://glazwu.cn/zhaoye/">关于作者</a></span></footer></body></html>

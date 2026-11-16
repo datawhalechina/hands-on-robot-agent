@@ -138,4 +138,4 @@ python lab/run.py move --seed 7 --x 1.0 --y 0.0 --z 0.18 --out runs/move-unreach
 
 - [Kris Hauser：Robotic Systems，逆运动学](https://motion.cs.illinois.edu/RoboticSystems/InverseKinematics.html)：两连杆推导、多个解和可行性约束。
 - [MuJoCo 仿真循环](https://mujoco.readthedocs.io/en/stable/programming/simulation.html#simulation-loop)：控制输入与状态推进之间的关系。
-- [课程实验源码](https://github.com/Glaz-j/agent-fieldnotes/tree/main/lab)：教学模型尺寸、坐标约定与移动接口实现。
+- [课程实验源码](https://github.com/datawhalechina/hands-on-robot-agent/tree/main/lab)：教学模型尺寸、坐标约定与移动接口实现。

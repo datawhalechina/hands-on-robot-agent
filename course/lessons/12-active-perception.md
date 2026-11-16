@@ -158,4 +158,4 @@ python inspect_active_view.py
 
 - [Bajcsy：Active Perception，1988](https://people.eecs.berkeley.edu/~yang/courses/cs294-6/papers/Bajcsy.active%20Perception.pdf)
 - [Bajcsy、Aloimonos、Tsotsos：Revisiting Active Perception](https://arxiv.org/abs/1603.02729)
-- [课程主动观察实验源码](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/advanced.py)
+- [课程主动观察实验源码](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/advanced.py)

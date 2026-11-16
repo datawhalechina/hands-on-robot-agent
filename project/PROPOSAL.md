@@ -1,17 +1,17 @@
-# Datawhale 立项申请草稿：动手学机器人 Agent
+# Datawhale 立项申请：动手学机器人 Agent
 
-更新：2026-11-10。尚未提交。以下对应官方立项表的六个字段，提交事项见 [提交前说明](submission-notes.md)。现有仓库名：`agent-fieldnotes`。
+更新：2026-11-16。负责人已于2026-11-10提交申请，2026-11-16确认立项，见 [DOPMC #450](https://github.com/datawhalechina/DOPMC/issues/450)。以下保留申请正文与原定计划，并更新课程名称和访问链接；进展见 [项目记录](submission-notes.md)。
 
 ## 项目简介
 
-《动手学机器人 Agent》（Agent Fieldnotes）是一套面向具身智能前沿的中文实践教程，以“构建能观察、决策、行动、验证和恢复的机器人 Agent”为主线，将机器人基础、Agent 系统设计与可复现实验贯通起来。
+《动手学机器人 Agent》是一套面向具身智能前沿的中文实践教程，以“构建能观察、决策、行动、验证和恢复的机器人 Agent”为主线，将机器人基础、Agent 系统设计与可复现实验贯通起来。
 
 课程以桌面方块搬运为贯穿任务，通过16章教材，从观察、坐标和技能接口逐步进入任务规划、视觉定位、任务与空间记忆、主动观察、程序化计划、局部技能学习和对照评测，最终完成双物体搬运助手。读者在每一步运行代码、观察行为、分析结果，掌握从单次动作到连续完成任务的系统构建方法。
 
 项目已提供在线教材、基于 MuJoCo 的轻量本地实验包和嵌入正文的演示。基础路线可在普通个人电脑上离线完成，无需实体机器人、GPU或付费模型API；进阶内容衔接模型工具接口与前沿机器人 Agent 方法。
 
-在线课程：https://glaz-j.github.io/agent-fieldnotes/
-仓库：https://github.com/Glaz-j/agent-fieldnotes
+在线课程：https://datawhalechina.github.io/hands-on-robot-agent/
+仓库：https://github.com/datawhalechina/hands-on-robot-agent
 
 ## 立项理由
 
@@ -57,7 +57,7 @@
 
 ### 一期范围与负责人
 
-负责人：吴昭烨（GitHub：[@Glaz-j](https://github.com/Glaz-j)）；公开联系入口：[项目 Issues](https://github.com/Glaz-j/agent-fieldnotes/issues)。负责人统筹教材、实验与网站维护，通过贡献指南和公开 Issue/PR 组织章节校审、试学与扩展实验。
+负责人：吴昭烨（GitHub：[@Glaz-j](https://github.com/Glaz-j)）；公开联系入口：[项目 Issues](https://github.com/datawhalechina/hands-on-robot-agent/issues)。负责人统筹教材、实验与网站维护，通过贡献指南和公开 Issue/PR 组织章节校审、试学与扩展实验。
 
 一期交付包括16章教材、离线仿真、教学网站与演示、协作材料、PDF阅读版及独立学习者验证，按以下里程碑推进。
 
@@ -106,13 +106,13 @@
 
 | 已有交付 | 公开证据 | 当前状态 |
 | --- | --- | --- |
-| 16章中文教材 | [课程](https://glaz-j.github.io/agent-fieldnotes/) / [教材源码](https://github.com/Glaz-j/agent-fieldnotes/tree/main/course/lessons) | 初稿与维护者校审；持续优化新人衔接 |
-| 新人起步页 | [终端与Python准备](https://glaz-j.github.io/agent-fieldnotes/start.html) | 小程序、预期输出、练习解释 |
-| 离线教学实验 | [lab](https://github.com/Glaz-j/agent-fieldnotes/tree/main/lab) / [轻量下载](https://glaz-j.github.io/agent-fieldnotes/downloads/agent-fieldnotes-lab.zip) | 基础与进阶命令已实现 |
-| 正文演示 | [第9章失败恢复](https://glaz-j.github.io/agent-fieldnotes/learn/09.html) / [第16章毕业任务](https://glaz-j.github.io/agent-fieldnotes/learn/16.html) | 课程录像附字幕、动作记录及生成源码 |
-| 已有运行验证 | [基础验收](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/VALIDATION.md) / [进阶说明](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/ADVANCED_GUIDE.md) | macOS ARM / Python3.12 / MuJoCo3.3.7；15项测试，已有匹配条件评测记录 |
-| 协作与教学改进 | [贡献指南](https://github.com/Glaz-j/agent-fieldnotes/blob/main/CONTRIBUTING.md) / [设计依据](https://github.com/Glaz-j/agent-fieldnotes/blob/main/project/teaching-design.md) | 补充学习卡点与程序错误反馈模板 |
+| 16章中文教材 | [课程](https://datawhalechina.github.io/hands-on-robot-agent/) / [教材源码](https://github.com/datawhalechina/hands-on-robot-agent/tree/main/course/lessons) | 初稿与维护者校审；持续优化新人衔接 |
+| 新人起步页 | [终端与Python准备](https://datawhalechina.github.io/hands-on-robot-agent/start.html) | 小程序、预期输出、练习解释 |
+| 离线教学实验 | [lab](https://github.com/datawhalechina/hands-on-robot-agent/tree/main/lab) / [轻量下载](https://datawhalechina.github.io/hands-on-robot-agent/downloads/hands-on-robot-agent-lab.zip) | 基础与进阶命令已实现 |
+| 正文演示 | [第9章失败恢复](https://datawhalechina.github.io/hands-on-robot-agent/learn/09.html) / [第16章毕业任务](https://datawhalechina.github.io/hands-on-robot-agent/learn/16.html) | 课程录像附字幕、动作记录及生成源码 |
+| 已有运行验证 | [基础验收](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/VALIDATION.md) / [进阶说明](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/ADVANCED_GUIDE.md) | macOS ARM / Python3.12 / MuJoCo3.3.7；15项测试，已有匹配条件评测记录 |
+| 协作与教学改进 | [贡献指南](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/CONTRIBUTING.md) / [设计依据](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/project/teaching-design.md) | 补充学习卡点与程序错误反馈模板 |
 
-原创教材及自制课程录像采用CC BY-NC-SA 4.0，原创软件采用MIT，第三方内容保持原条款。范围与全文见 [LICENSE](https://github.com/Glaz-j/agent-fieldnotes/blob/main/LICENSE)。
+原创教材及自制课程录像采用CC BY-NC-SA 4.0，原创软件采用MIT，第三方内容保持原条款。范围与全文见 [LICENSE](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/LICENSE)。
 
 下一阶段推进独立学习者试学、Windows/Linux实机复核、PDF阅读版及反馈修订；在线模型接口的真实服务验证纳入后续进阶实验。社区内测与公测按立项后的流程推进。

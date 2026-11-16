@@ -10,7 +10,7 @@ import markdown
 
 ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / 'docs'
-REPO = 'https://github.com/Glaz-j/agent-fieldnotes'
+REPO = 'https://github.com/datawhalechina/hands-on-robot-agent'
 CHAPTERS = [
     ('拆解一个机器人 Agent', '任务、观察、决策与执行分别由谁负责', '01-robot-agent.md'),
     ('运行第一个仿真环境', '安装 MuJoCo，让机械臂完成一次任务', '02-first-simulation.md'),
@@ -89,22 +89,24 @@ def roadmap():
     return ''.join(f'<div><h3>{start:02}—{end:02} / {heading}</h3>{chapter_links(start,end)}</div>' for start,end,_,heading in GROUPS)
 
 def topbar(prefix=''):
-    return f'''<a class="skip" href="#main">跳到正文</a><header class="topbar"><a class="brand" href="{prefix}index.html"><b>af</b><span>Agent Fieldnotes<small>机器人 Agent · 从理解到动手</small></span></a><nav aria-label="主导航"><a href="{prefix}index.html#curriculum">学习路线</a><a href="{prefix}gallery.html">实验案例</a><a class="repo" href="{REPO}">GitHub ↗</a></nav></header>'''
+    return f'''<a class="skip" href="#main">跳到正文</a><header class="topbar"><a class="brand" href="{prefix}index.html"><b>ra</b><span>动手学机器人 Agent<small>机器人 Agent · 从理解到动手</small></span></a><nav aria-label="主导航"><a href="{prefix}index.html#curriculum">学习路线</a><a href="{prefix}gallery.html">实验案例</a><a class="repo" href="{REPO}">GitHub ↗</a></nav></header>'''
 
 def footer(prefix=''):
-    return f'''<footer class="footer"><span>Agent Fieldnotes · 在实验中学习机器人 Agent</span><span><a href="{REPO}/blob/main/LICENSE">课程许可</a> · <a href="{prefix}attributions.html">案例来源与许可</a> · <a href="{REPO}/issues">问题与勘误</a> · <a href="https://glazwu.cn/zhaoye/">关于作者</a></span></footer>'''
+    return f'''<footer class="footer"><span>动手学机器人 Agent · 在实验中学习机器人 Agent</span><span><a href="{REPO}/blob/main/LICENSE">课程许可</a> · <a href="{prefix}attributions.html">案例来源与许可</a> · <a href="{REPO}/issues">问题与勘误</a> · <a href="https://glazwu.cn/zhaoye/">关于作者</a></span></footer>'''
 
 def page(title, body, prefix='', description='通过十六章循序渐进的教程和可运行的 MuJoCo 实验，学习机器人 Agent 的感知、记忆、技能、决策与评测。'):
+    document_title = title if title == '动手学机器人 Agent' else title + ' · 动手学机器人 Agent'
     return f'''<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{html.escape(description, quote=True)}"><meta name="theme-color" content="#f3f4ee"><title>{html.escape(title)} · Agent Fieldnotes</title><link rel="stylesheet" href="{prefix}course.css?v=novice-onramp"><script defer src="{prefix}course.js?v=novice-onramp"></script></head><body data-lesson-count="{CHAPTER_COUNT}">{topbar(prefix)}{body}{footer(prefix)}</body></html>\n'''
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{html.escape(description, quote=True)}"><meta name="theme-color" content="#f3f4ee"><title>{html.escape(document_title)}</title><link rel="stylesheet" href="{prefix}course.css?v=novice-onramp"><script defer src="{prefix}course.js?v=novice-onramp"></script></head><body data-lesson-count="{CHAPTER_COUNT}">{topbar(prefix)}{body}{footer(prefix)}</body></html>\n'''
 
 def chapter_links(start, end):
     return ''.join(f'<a class="chapter-row" data-chapter="{i}" href="learn/{i:02}.html"><span class="chapter-num">{i:02}</span><span class="chapter-name">{html.escape(CHAPTERS[i-1][0])}<small>{html.escape(CHAPTERS[i-1][1])}</small></span><span class="arrow" aria-hidden="true">↗</span></a>' for i in range(start, end+1))
 
 def build_home():
     body = f'''<main id="main" class="wrap">
-<section class="hero"><div><span class="label">一条从 Python 到机器人决策的学习路线</span><h1>动手构建<br>机器人 Agent</h1><p class="intro">从一次抓取开始，学会让机器人理解任务、调用技能、检查结果，并在失败后继续行动。</p><div class="actions"><a class="primary" href="start.html">第一次学习，从这里开始 →</a><a class="secondary" href="learn/01.html">直接读第 1 章 →</a><a class="secondary" href="downloads/agent-fieldnotes-lab.zip" download>下载教学实验包 ↓</a></div><p class="small">16 章循序渐进 · 本地仿真实验 · 无需实体机器人</p></div>
+<section class="hero"><div><span class="label">一条从 Python 到机器人决策的学习路线</span><h1>动手学<br>机器人 Agent</h1><p class="intro">从一次抓取开始，学会让机器人理解任务、调用技能、检查结果，并在失败后继续行动。</p><div class="actions"><a class="primary" href="start.html">第一次学习，从这里开始 →</a><a class="secondary" href="learn/01.html">直接读第 1 章 →</a><a class="secondary" href="downloads/hands-on-robot-agent-lab.zip" download>下载教学实验包 ↓</a></div><p class="small">16 章循序渐进 · 本地仿真实验 · 无需实体机器人</p></div>
 <figure><video controls playsinline preload="metadata" poster="media/mems-target-shift-libero-three-t00.jpg" aria-label="已有展厅案例：目标碗移动后的机器人任务轨迹"><source src="media/mems-target-shift-libero-three-t00.mp4" type="video/mp4"></video><figcaption><strong>如果目标突然移动，机器人该怎么办？</strong>先带着这个问题学习，再回到 MemS 案例看它如何处理变化。视频来自原展厅；教学实验从更小的任务起步。<br><a href="gallery.html#demo-mems-target-shift-libero-three">查看完整案例与来源 ↗</a></figcaption></figure></section>
+<p class="small">已通过 Datawhale 立项 · <a href="https://github.com/datawhalechina/DOPMC/issues/450">查看立项记录 #450</a></p>
 <div class="course-band"><div><strong>你需要会什么</strong><p>基础 Python 即可；<a href="start.html">新手准备页</a>补终端、文件与语法，坐标知识随课学习。</p></div><div><strong>你将亲手完成什么</strong><p>运行机械臂，构建技能接口与可恢复的任务循环。</p></div><div><strong>实验从哪里开始</strong><p>独立的简化 MuJoCo 环境；先理解，再接入模型。</p></div></div>
 <section class="section" id="curriculum"><span class="label">LEARNING PATH / 学习路线</span><div class="section-lead"><h2>每一章，解决一个具体问题</h2><p>按顺序完成前置知识，再把观察、技能与决策连起来。每章都有动手步骤、验收标准、故障排查和延伸阅读。</p></div><p class="progress-note"><span id="progress-count">0 / {CHAPTER_COUNT} 章已完成</span> · 进度保存在当前浏览器，可随时取消勾选。</p><div class="roadmap">{roadmap()}</div><div class="lab-note"><strong>两条动手入口</strong><br>第一次接触机器人，从第 1 章开始；已经跑通基础实验，从 <a href="learn/10.html">第 10 章的任务记忆</a> 继续。默认离线主线无需模型密钥。第 8、12 章是视觉支线，第 13、14 章分别探索程序计划与学习技能；<a href="learn/16.html">第 16 章</a>说明毕业任务实际组合了哪些模块。正文演示可以就地播放，再用实验日志验证。</div></section>
 <section class="section" id="cases"><span class="label">FIELD NOTES / 从真实轨迹提问</span><h2>原来的展厅，成为课堂里的案例库</h2><p class="section-lead">不要只看机器人是否做完。尝试找出：它知道什么、何时决策、哪里出错，以及什么证据说明任务完成。案例与教学实验分开标注，保留各自的实现条件。</p><div class="cases">
@@ -117,7 +119,7 @@ python lab/run.py doctor
 python lab/run.py baseline --out runs/baseline
 python lab/run.py agent --mode scripted --out runs/agent</code></pre></div></section>
 </main>'''
-    (DOCS/'index.html').write_text(page('动手构建机器人 Agent',body),encoding='utf-8')
+    (DOCS/'index.html').write_text(page('动手学机器人 Agent',body),encoding='utf-8')
 
 def build_lessons():
     output = DOCS/'learn'
@@ -139,7 +141,7 @@ def build_lessons():
             nav += f'<a href="{i:02}.html"'+(' aria-current="page"' if i==number else '')+f'>{i:02} · {name}</a>'
         prev = f'<a rel="prev" href="{number-1:02}.html">← 上一章</a>' if number>1 else '<a href="../index.html">← 学习路线</a>'
         nxt = f'<a rel="next" href="{number+1:02}.html">下一章 →</a>' if number<CHAPTER_COUNT else '<a href="../gallery.html">带着问题看案例 →</a>'
-        body = f'''<main id="main" class="lesson-layout"><aside class="course-nav" aria-label="课程目录"><details open><summary>课程目录 · {CHAPTER_COUNT} 章</summary><nav>{nav}<div class="nav-group">继续动手</div><a href="../downloads/agent-fieldnotes-lab.zip" download>下载教学实验包 ↓</a><a href="../gallery.html">实验案例库 ↗</a></nav></details></aside><div class="reading"><header><div class="label">第 {number:02} 章 / {chapter_group(number)}</div><h1>{title}</h1><p>{subtitle}</p><div class="lesson-meta">讲解 · 动手实验 · 验收检查 · 练习</div></header><details class="toc-box"><summary>本章内容</summary>{md.toc}</details><article>{article}</article><div class="lab-note">本课程实验使用独立的简化教学环境。标为“展厅阅读案例”的录像采用各自的机器人与模型设置；标为“本课实验录像”的内容来自本课程代码的实际运行。<br><a href="{REPO}/blob/main/{source.relative_to(ROOT).as_posix()}">查看本章源文件</a> · <a href="{REPO}/blob/main/lab/{'GUIDE.md' if number<=9 else 'ADVANCED_GUIDE.md'}">查看实验说明</a></div><div class="lesson-bottom"><label class="finish-label"><input type="checkbox" id="lesson-complete" data-lesson="{number}">我已完成本章学习与验收</label><p class="progress-note" id="progress-status" role="status">学习进度仅保存在当前浏览器。</p><nav class="pager" aria-label="章节翻页">{prev}{nxt}</nav></div></div></main>'''
+        body = f'''<main id="main" class="lesson-layout"><aside class="course-nav" aria-label="课程目录"><details open><summary>课程目录 · {CHAPTER_COUNT} 章</summary><nav>{nav}<div class="nav-group">继续动手</div><a href="../downloads/hands-on-robot-agent-lab.zip" download>下载教学实验包 ↓</a><a href="../gallery.html">实验案例库 ↗</a></nav></details></aside><div class="reading"><header><div class="label">第 {number:02} 章 / {chapter_group(number)}</div><h1>{title}</h1><p>{subtitle}</p><div class="lesson-meta">讲解 · 动手实验 · 验收检查 · 练习</div></header><details class="toc-box"><summary>本章内容</summary>{md.toc}</details><article>{article}</article><div class="lab-note">本课程实验使用独立的简化教学环境。标为“展厅阅读案例”的录像采用各自的机器人与模型设置；标为“本课实验录像”的内容来自本课程代码的实际运行。<br><a href="{REPO}/blob/main/{source.relative_to(ROOT).as_posix()}">查看本章源文件</a> · <a href="{REPO}/blob/main/lab/{'GUIDE.md' if number<=9 else 'ADVANCED_GUIDE.md'}">查看实验说明</a></div><div class="lesson-bottom"><label class="finish-label"><input type="checkbox" id="lesson-complete" data-lesson="{number}">我已完成本章学习与验收</label><p class="progress-note" id="progress-status" role="status">学习进度仅保存在当前浏览器。</p><nav class="pager" aria-label="章节翻页">{prev}{nxt}</nav></div></div></main>'''
         (output/f'{number:02}.html').write_text(page(title,body,'../',subtitle),encoding='utf-8')
 
 def build_start():
@@ -158,11 +160,12 @@ def build_download():
     if not {'run.py','scene.xml','requirements.txt','GUIDE.md','advanced.py','ADVANCED_GUIDE.md','capstone.xml','example-program.json'} <= {p.name for p in files}:
         raise ValueError('Teaching lab source is incomplete')
     # Fixed timestamps make the download reproducible.
-    with zipfile.ZipFile(output/'agent-fieldnotes-lab.zip','w',compression=zipfile.ZIP_DEFLATED) as archive:
+    with zipfile.ZipFile(output/'hands-on-robot-agent-lab.zip','w',compression=zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(files):
             entry = zipfile.ZipInfo('lab/'+path.name, date_time=(2026,11,6,0,0,0))
             entry.compress_type = zipfile.ZIP_DEFLATED
             archive.writestr(entry,path.read_bytes())
+    (output/'agent-fieldnotes-lab.zip').write_bytes((output/'hands-on-robot-agent-lab.zip').read_bytes())
 
 if __name__ == '__main__':
     build_start()

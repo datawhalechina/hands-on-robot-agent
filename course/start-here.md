@@ -37,15 +37,15 @@ py --version
 
 预期看到类似 `Python 3.12.16` 的一行。课程实测 Python 3.12；最后的小版本可以不同。若提示找不到命令，先按 [Python 3.12 官方安装指南](https://docs.python.org/3.12/using/index.html) 选择对应系统安装，再重新打开终端。这里还不安装机器人依赖，第 2 章会建立专用环境。
 
-下载并解压 [实验包](downloads/agent-fieldnotes-lab.zip)。在文件管理器中找到那个直接包含 `lab` 文件夹的位置。终端的“当前目录”就是它查找相对路径的起点。
+下载并解压 [实验包](downloads/hands-on-robot-agent-lab.zip)。在文件管理器中找到那个直接包含 `lab` 文件夹的位置。终端的“当前目录”就是它查找相对路径的起点。
 
 在终端输入 `cd `，后面接上这个文件夹的完整路径；路径含空格时用英文双引号包住。例如，下面的 `你的用户名` 必须替换，不能照抄：
 
 ```sh
-cd "/Users/你的用户名/Downloads/agent-fieldnotes-lab"
+cd "/Users/你的用户名/Downloads/hands-on-robot-agent-lab"
 ```
 
-Windows 路径例子：`cd "C:\Users\你的用户名\Downloads\agent-fieldnotes-lab"`。不同解压软件生成的文件夹名字可能不同，以你看到的实际目录为准。
+Windows 路径例子：`cd "C:\Users\你的用户名\Downloads\hands-on-robot-agent-lab"`。不同解压软件生成的文件夹名字可能不同，以你看到的实际目录为准。
 
 macOS / Linux 用 `pwd` 查看当前目录、`ls` 列出其中的文件；PowerShell 对应 `Get-Location` 和 `Get-ChildItem`。**检查点：列表里直接出现 `lab`。** 如果直接看见 `run.py`，说明进到了 `lab` 里面，运行 `cd ..` 返回外层。
 
@@ -122,7 +122,7 @@ Python 文件告诉程序**如何计算**；JSON 文件保存**本次数据**。
 | `NameError` | 检查变量拼写、大小写，以及是否先赋值再使用 |
 | 运行后没有机器人窗口 | 第 2 章默认输出日志；网页视频是录像，不是本机正在运行的窗口 |
 
-遇到卡点时，保存“哪章哪一步、操作系统、完整命令、预期结果、实际输出”。复制文字比只写“运行不了”更容易获得帮助。可使用 [学习卡点反馈表](https://github.com/Glaz-j/agent-fieldnotes/issues/new?template=learner-feedback.yml)；发布前移除密钥和无关个人路径。
+遇到卡点时，保存“哪章哪一步、操作系统、完整命令、预期结果、实际输出”。复制文字比只写“运行不了”更容易获得帮助。可使用 [学习卡点反馈表](https://github.com/datawhalechina/hands-on-robot-agent/issues/new?template=learner-feedback.yml)；发布前移除密钥和无关个人路径。
 
 ## 准备好了，接下来怎么学
 

@@ -1,11 +1,11 @@
-# 参与 Agent Fieldnotes
+# 参与 动手学机器人 Agent
 
 欢迎报告学习卡点、修正文档、补充可复跑实验或改善网页。不会写代码也可以贡献：说明你在哪一步停住、实际看到了什么，就是有用的反馈。
 
 ## 先选一个入口
 
-- 看不懂术语、不会安装、步骤跳跃或输出对不上：使用 [学习卡点反馈](https://github.com/Glaz-j/agent-fieldnotes/issues/new?template=learner-feedback.yml)。不必先判断是不是 bug。
-- 程序报错、网页链接失效或结果与实现不符：使用 [问题报告](https://github.com/Glaz-j/agent-fieldnotes/issues/new?template=bug-report.yml)。
+- 看不懂术语、不会安装、步骤跳跃或输出对不上：使用 [学习卡点反馈](https://github.com/datawhalechina/hands-on-robot-agent/issues/new?template=learner-feedback.yml)。不必先判断是不是 bug。
+- 程序报错、网页链接失效或结果与实现不符：使用 [问题报告](https://github.com/datawhalechina/hands-on-robot-agent/issues/new?template=bug-report.yml)。
 - 想增加章节或改变实验接口：先开 Issue，说明读者需要、方案和影响范围；错字、小范围说明修正可直接发 Pull Request（PR，请求合并修改）。
 
 提交前搜索是否已有同一问题。有的话，补充自己的平台、步骤与输出即可。讨论围绕具体内容和证据，尊重不同经验的学习者。不要公开 API 密钥、Authorization 头、Cookie 或未打码的个人信息；不需要贴出完整环境变量。

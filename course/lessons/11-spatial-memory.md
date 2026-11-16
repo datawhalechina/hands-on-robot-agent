@@ -166,4 +166,4 @@ python inspect_spatial_memory.py
 
 - [MemS 场景维护与几何估计](https://github.com/darthjaja6/MemS)
 - [MuJoCo 3.3.7 状态与仿真时间](https://mujoco.readthedocs.io/en/3.3.7/programming/simulation.html#state-and-control)
-- [课程进阶实验源码](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/advanced.py)
+- [课程进阶实验源码](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/advanced.py)

@@ -144,5 +144,5 @@ python inspect_ch06.py
 
 ## 参考
 
-- [课程循环与工具实现](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/run.py)
+- [课程循环与工具实现](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/run.py)
 - [MuJoCo 3.3.7 Python 接口](https://mujoco.readthedocs.io/en/3.3.7/python.html)

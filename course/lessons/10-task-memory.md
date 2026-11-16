@@ -205,5 +205,5 @@ python invalidate_ch10.py
 
 ## 参考
 
-- [课程任务记忆实现](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/advanced.py)
+- [课程任务记忆实现](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/advanced.py)
 - [RoboICL 原始代码与记忆组件](https://github.com/Mosi-AI/RoboICL)

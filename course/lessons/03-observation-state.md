@@ -125,4 +125,4 @@ python inspect_observations.py
 
 - [MuJoCo 状态与控制](https://mujoco.readthedocs.io/en/stable/programming/simulation.html#state-and-control)：仿真状态和控制量的正式说明。
 - [MuJoCo Python 数据访问](https://mujoco.readthedocs.io/en/stable/python.html)：底层数组与数据复制的行为。
-- [课程实验源码](https://github.com/Glaz-j/agent-fieldnotes/tree/main/lab)：本章观察字段的实际定义。
+- [课程实验源码](https://github.com/datawhalechina/hands-on-robot-agent/tree/main/lab)：本章观察字段的实际定义。

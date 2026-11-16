@@ -66,7 +66,7 @@ for p in (DOCS / "course-media").glob("course-*.json"):
     assert p.with_suffix(".vtt").read_text().startswith("WEBVTT\n")
     assert p.with_suffix(".mp4").is_file() and p.with_suffix(".png").is_file()
 
-with zipfile.ZipFile(DOCS / "downloads/agent-fieldnotes-lab.zip") as archive:
+with zipfile.ZipFile(DOCS / "downloads/hands-on-robot-agent-lab.zip") as archive:
     for name in archive.namelist():
         assert archive.read(name) == (ROOT / name).read_bytes(), name
     source_count = len(archive.namelist())

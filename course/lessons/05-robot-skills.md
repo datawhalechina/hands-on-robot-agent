@@ -123,4 +123,4 @@ python lab/run.py baseline --seed 7 --perturb miss-grasp --out runs/skills-miss
 
 - [MuJoCo 焊接约束定义](https://mujoco.readthedocs.io/en/stable/XMLreference.html#equality-weld)：理解教学附着方式的物理建模含义。
 - [Code as Policies 原始项目](https://code-as-policies.github.io/)：代码组织感知与控制接口的实例。
-- [课程技能与执行器源码](https://github.com/Glaz-j/agent-fieldnotes/blob/main/lab/run.py)：阈值、错误类型与日志的直接依据。
+- [课程技能与执行器源码](https://github.com/datawhalechina/hands-on-robot-agent/blob/main/lab/run.py)：阈值、错误类型与日志的直接依据。

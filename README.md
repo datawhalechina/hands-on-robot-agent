@@ -1,10 +1,10 @@
-# Agent Fieldnotes · 动手构建机器人 Agent
+# 动手学机器人 Agent
 
 从 Python 和一次桌面搬运任务开始，学习机器人 Agent 的观察、技能、决策、任务验收与失败恢复。现已提供十六章基础与进阶中文教程、独立的 MuJoCo 教学实验包，以及原有机器人探索展厅的案例材料。
 
-- [开始学习](https://glaz-j.github.io/agent-fieldnotes/)
-- [下载轻量教学实验包](https://glaz-j.github.io/agent-fieldnotes/downloads/agent-fieldnotes-lab.zip)
-- [浏览实验案例库](https://glaz-j.github.io/agent-fieldnotes/gallery.html)
+- [开始学习](https://datawhalechina.github.io/hands-on-robot-agent/)
+- [下载轻量教学实验包](https://datawhalechina.github.io/hands-on-robot-agent/downloads/hands-on-robot-agent-lab.zip)
+- [浏览实验案例库](https://datawhalechina.github.io/hands-on-robot-agent/gallery.html)
 
 ## 学习内容
 
@@ -103,17 +103,17 @@ GitHub Pages 从 `main` 分支的 `/docs` 发布，网站没有模型密钥或�
 
 ## 面向第一次动手的读者
 
-先看 [新手准备页](https://glaz-j.github.io/agent-fieldnotes/start.html)：用一个独立小程序认识终端、目录、函数、字典与JSON，再进入第2章安装机器人实验。各章补充小步自查、预期现象与参考解释。教学组织依据和下一轮试学计划见 [教学设计记录](project/teaching-design.md)。
+先看 [新手准备页](https://datawhalechina.github.io/hands-on-robot-agent/start.html)：用一个独立小程序认识终端、目录、函数、字典与JSON，再进入第2章安装机器人实验。各章补充小步自查、预期现象与参考解释。教学组织依据和下一轮试学计划见 [教学设计记录](project/teaching-design.md)。
 
 ## 负责人、协作与项目状态
 
-负责人：[吴昭烨 / Glaz-j](https://github.com/Glaz-j)。公开联系与课程问题请使用 [GitHub Issues](https://github.com/Glaz-j/agent-fieldnotes/issues)。目前由负责人维护，真实贡献者以Git提交和PR记录为准；未将未确认的志愿者列入团队。
+负责人：[吴昭烨 / Glaz-j](https://github.com/Glaz-j)。公开联系与课程问题请使用 [GitHub Issues](https://github.com/datawhalechina/hands-on-robot-agent/issues)。目前由负责人维护，真实贡献者以Git提交和PR记录为准；未将未确认的志愿者列入团队。
 
-欢迎提交错字、学习卡点、复跑记录与改进建议。请先阅读 [贡献指南](CONTRIBUTING.md)，再选择 [学习卡点](https://github.com/Glaz-j/agent-fieldnotes/issues/new?template=learner-feedback.yml) 或 [程序错误](https://github.com/Glaz-j/agent-fieldnotes/issues/new?template=bug-report.yml) 模板。
+欢迎提交错字、学习卡点、复跑记录与改进建议。请先阅读 [贡献指南](CONTRIBUTING.md)，再选择 [学习卡点](https://github.com/datawhalechina/hands-on-robot-agent/issues/new?template=learner-feedback.yml) 或 [程序错误](https://github.com/datawhalechina/hands-on-robot-agent/issues/new?template=bug-report.yml) 模板。
 
-16章教材和实验主体已完成初稿，当前处于持续校审阶段；独立读者试学和PDF阅读版列入后续计划。项目正在准备向 [Datawhale DOPMC](https://github.com/datawhalechina/DOPMC) 申请立项，**尚未提交或获得立项，不是Datawhale已认定的官方项目**。[Datawhale](https://www.datawhale.cn/) 是开源学习社区；本项目参考其课程与公开协作规范，后续参与状态以正式审核结果为准。
+项目已于 **2026-11-16 通过 Datawhale 立项**，见 [DOPMC #450](https://github.com/datawhalechina/DOPMC/issues/450)。16章教材和实验主体已完成初稿，当前持续校审，并准备独立读者试学、跨平台验证和PDF阅读版。
 
-[申请草稿与章节计划](project/PROPOSAL.md) · [提交前说明](project/submission-notes.md)。既有仓库按社区模板补齐必要资料，但没有声称它由模板新建；接入方式在申请中明确请审核方确认。
+[立项申请与章节计划](project/PROPOSAL.md) · [项目进展与后续安排](project/submission-notes.md)。
 
 ## 原创内容许可
 
