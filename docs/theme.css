@@ -1,0 +1,17 @@
+:root {
+  color-scheme: light;
+  --ink: #14243b;
+  --muted: #4c5f79;
+  --line: #dbe4ef;
+  --paper: #fff;
+  --surface: #fafcff;
+  --soft: #f4f7fc;
+  --tint: #eaf2ff;
+  --accent: #164bc4;
+  --accent-strong: #113b9b;
+  --accent-on-dark: #c2d8fe;
+  --dark: #13233b;
+  --on-dark: #f4f8ff;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+}
