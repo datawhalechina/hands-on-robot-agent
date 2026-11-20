@@ -1,37 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460">
 <title>从传统机器人模块到本课实现</title>
 <defs>
-<marker id="ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#41574e"/></marker>
-<marker id="green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#09614e"/></marker>
+<marker id="ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#4c5f79"/></marker>
+<marker id="accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#164bc4"/></marker>
 <marker id="red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#a3362e"/></marker>
-<marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#24517d"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#385984"/></marker>
 </defs>
 <g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
-<rect x="1" y="1" width="638" height="458" rx="18" fill="#f5f8f5" stroke="#d5ded7"/>
-<text x="40" y="42" text-anchor="start" font-size="22" font-weight="700" fill="#192c26">模块化机器人常见职责</text>
-<text x="340" y="42" text-anchor="start" font-size="22" font-weight="700" fill="#192c26">本课实现</text>
-<rect x="24" y="60" width="258" height="64" rx="12" fill="#e5edf8" stroke="#a8bdd7"/>
-<text x="153.0" y="100.0" text-anchor="middle" font-size="23" font-weight="680" fill="#24517d">感知与状态估计</text>
-<polyline points="290,92 321,92" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
-<rect x="329" y="60" width="287" height="64" rx="12" fill="#ffffff" stroke="#cad8d0"/>
-<text x="472.5" y="100.0" text-anchor="middle" font-size="23" font-weight="680" fill="#192c26">World.observe()</text>
-<polyline points="473,131 473,148" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
-<rect x="24" y="155" width="258" height="64" rx="12" fill="#e0f0e7" stroke="#96c6b1"/>
-<text x="153.0" y="195.0" text-anchor="middle" font-size="23" font-weight="680" fill="#09614e">任务规划与监控</text>
-<polyline points="290,187 321,187" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
-<rect x="329" y="155" width="287" height="64" rx="12" fill="#ffffff" stroke="#cad8d0"/>
-<text x="472.5" y="195.0" text-anchor="middle" font-size="23" font-weight="680" fill="#192c26">scripted_agent()</text>
-<polyline points="473,226 473,243" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="1" y="1" width="638" height="458" rx="18" fill="#f5f8fe" stroke="#dbe4ef"/>
+<text x="40" y="42" text-anchor="start" font-size="22" font-weight="700" fill="#14243b">模块化机器人常见职责</text>
+<text x="340" y="42" text-anchor="start" font-size="22" font-weight="700" fill="#14243b">本课实现</text>
+<rect x="24" y="60" width="258" height="64" rx="12" fill="#eef2f8" stroke="#b3c4db"/>
+<text x="153.0" y="100.0" text-anchor="middle" font-size="23" font-weight="680" fill="#385984">感知与状态估计</text>
+<polyline points="290,92 321,92" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="329" y="60" width="287" height="64" rx="12" fill="#ffffff" stroke="#dbe4ef"/>
+<text x="472.5" y="100.0" text-anchor="middle" font-size="23" font-weight="680" fill="#14243b">World.observe()</text>
+<polyline points="473,131 473,148" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="24" y="155" width="258" height="64" rx="12" fill="#eaf2ff" stroke="#a9c4f6"/>
+<text x="153.0" y="195.0" text-anchor="middle" font-size="23" font-weight="680" fill="#164bc4">任务规划与监控</text>
+<polyline points="290,187 321,187" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="329" y="155" width="287" height="64" rx="12" fill="#ffffff" stroke="#dbe4ef"/>
+<text x="472.5" y="195.0" text-anchor="middle" font-size="23" font-weight="680" fill="#14243b">scripted_agent()</text>
+<polyline points="473,226 473,243" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
 <rect x="24" y="250" width="258" height="64" rx="12" fill="#faf0d9" stroke="#d4b776"/>
 <text x="153.0" y="290.0" text-anchor="middle" font-size="23" font-weight="680" fill="#77520c">运动与底层控制</text>
-<polyline points="290,282 321,282" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
-<rect x="329" y="250" width="287" height="64" rx="12" fill="#ffffff" stroke="#cad8d0"/>
-<text x="472.5" y="290.0" text-anchor="middle" font-size="23" font-weight="680" fill="#192c26">World.move() + 伺服</text>
-<polyline points="473,321 473,338" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
-<rect x="24" y="345" width="258" height="64" rx="12" fill="#e0f0e7" stroke="#96c6b1"/>
-<text x="153.0" y="385.0" text-anchor="middle" font-size="23" font-weight="680" fill="#09614e">完成条件检查</text>
-<polyline points="290,377 321,377" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
-<rect x="329" y="345" width="287" height="64" rx="12" fill="#ffffff" stroke="#cad8d0"/>
-<text x="472.5" y="385.0" text-anchor="middle" font-size="23" font-weight="680" fill="#192c26">World.success()</text>
-<text x="320" y="437" text-anchor="middle" font-size="20" font-weight="640" fill="#09614e">验收未通过时，下一轮继续读新状态</text>
+<polyline points="290,282 321,282" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="329" y="250" width="287" height="64" rx="12" fill="#ffffff" stroke="#dbe4ef"/>
+<text x="472.5" y="290.0" text-anchor="middle" font-size="23" font-weight="680" fill="#14243b">World.move() + 伺服</text>
+<polyline points="473,321 473,338" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="24" y="345" width="258" height="64" rx="12" fill="#eaf2ff" stroke="#a9c4f6"/>
+<text x="153.0" y="385.0" text-anchor="middle" font-size="23" font-weight="680" fill="#164bc4">完成条件检查</text>
+<polyline points="290,377 321,377" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="329" y="345" width="287" height="64" rx="12" fill="#ffffff" stroke="#dbe4ef"/>
+<text x="472.5" y="385.0" text-anchor="middle" font-size="23" font-weight="680" fill="#14243b">World.success()</text>
+<text x="320" y="437" text-anchor="middle" font-size="20" font-weight="640" fill="#164bc4">验收未通过时，下一轮继续读新状态</text>
 </g></svg>

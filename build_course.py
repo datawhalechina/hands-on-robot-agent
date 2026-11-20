@@ -88,10 +88,25 @@ def render_demo(match):
 
 
 def roadmap():
-    return ''.join(f'<div><h3>{start:02}—{end:02} / {heading}</h3>{chapter_links(start,end)}</div>' for start,end,_,heading in GROUPS)
+    groups = []
+    for start, end, label, heading in GROUPS:
+        groups.append(
+            f'<details class="roadmap-group"><summary>'
+            f'<span class="chapter-num">{start:02}–{end:02}</span>'
+            f'<span><strong>{html.escape(label)}</strong><small>{html.escape(heading)}</small></span>'
+            f'<span class="roadmap-chevron" aria-hidden="true"></span></summary>'
+            f'<div class="roadmap-chapters">{chapter_links(start, end)}</div></details>'
+        )
+    return ''.join(groups)
+
 
 def topbar(prefix=''):
-    return f'''<a class="skip" href="#main">跳到正文</a><header class="topbar"><a class="brand" href="{prefix}index.html"><b>ra</b><span>动手学机器人 Agent<small>机器人 Agent · 从理解到动手</small></span></a><nav aria-label="主导航"><a href="{prefix}index.html#curriculum">学习路线</a><a href="{prefix}gallery.html">实验案例</a><a class="repo" href="{REPO}">GitHub ↗</a></nav></header>'''
+    return f'''<a class="skip" href="#main">跳到正文</a>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="{prefix}index.html"><span class="brand-mark" aria-hidden="true">R</span><span>机器人 Agent</span></a>
+<nav aria-label="主导航"><a href="{prefix}index.html#curriculum">学习路线</a><a href="{prefix}gallery.html">实验案例</a><a class="repo" href="{REPO}">GitHub ↗</a></nav>
+</div></header>'''
+
 
 def footer(prefix=''):
     return f'''<footer class="footer"><span>动手学机器人 Agent · 在实验中学习机器人 Agent</span><span><a href="{REPO}/blob/main/LICENSE">课程许可</a> · <a href="{prefix}attributions.html">案例来源与许可</a> · <a href="{REPO}/issues">问题与勘误</a> · <a href="https://glazwu.cn/zhaoye/">关于作者</a></span></footer>'''
@@ -99,24 +114,42 @@ def footer(prefix=''):
 def page(title, body, prefix='', description='通过十六章循序渐进的教程和可运行的 MuJoCo 实验，学习机器人 Agent 的感知、记忆、技能、决策与评测。'):
     document_title = title if title == '动手学机器人 Agent' else title + ' · 动手学机器人 Agent'
     return f'''<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{html.escape(description, quote=True)}"><meta name="theme-color" content="#f3f4ee"><title>{html.escape(document_title)}</title><link rel="stylesheet" href="{prefix}course.css?v=architecture-intro"><script defer src="{prefix}course.js?v=novice-onramp"></script></head><body data-lesson-count="{CHAPTER_COUNT}">{topbar(prefix)}{body}{footer(prefix)}</body></html>\n'''
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{html.escape(description, quote=True)}"><meta name="theme-color" content="#fafcff"><title>{html.escape(document_title)}</title><link rel="stylesheet" href="{prefix}theme.css?v=blue-docs"><link rel="stylesheet" href="{prefix}course.css?v=blue-docs"><script defer src="{prefix}course.js?v=blue-docs"></script></head><body data-lesson-count="{CHAPTER_COUNT}">{topbar(prefix)}{body}{footer(prefix)}</body></html>\n'''
 
 def chapter_links(start, end):
     return ''.join(f'<a class="chapter-row" data-chapter="{i}" href="learn/{i:02}.html"><span class="chapter-num">{i:02}</span><span class="chapter-name">{html.escape(CHAPTERS[i-1][0])}<small>{html.escape(CHAPTERS[i-1][1])}</small></span><span class="arrow" aria-hidden="true">↗</span></a>' for i in range(start, end+1))
 
 def build_home():
     body = f'''<main id="main" class="wrap">
-<section class="hero"><div><span class="label">从动作策略到机器人任务闭环</span><h1>动手学<br>机器人 Agent</h1><p class="intro">从熟悉的 VLA 出发，对照 WAM 和机器人 Agent，再用同一台仿真机械臂看懂技能、决策和失败恢复。</p><div class="actions"><a class="primary" href="learn/01.html">从 VLA 读起 →</a><a class="secondary" href="start.html">终端与 Python 准备</a><a class="secondary" href="downloads/hands-on-robot-agent-lab.zip" download>下载教学实验包 ↓</a></div><p class="small">16 章循序渐进 · 本地仿真实验 · 无需实体机器人</p></div>
-<figure><video controls playsinline preload="metadata" poster="media/mems-target-shift-libero-three-t00.jpg" aria-label="已有展厅案例：目标碗移动后的机器人任务轨迹"><source src="media/mems-target-shift-libero-three-t00.mp4" type="video/mp4"></video><figcaption><strong>如果目标突然移动，机器人该怎么办？</strong>先带着这个问题学习，再回到 MemS 案例看它如何处理变化。视频来自原展厅；教学实验从更小的任务起步。<br><a href="gallery.html#demo-mems-target-shift-libero-three">查看完整案例与来源 ↗</a></figcaption></figure></section>
-<p class="small">已通过 Datawhale 立项 · <a href="https://github.com/datawhalechina/DOPMC/issues/450">查看立项记录 #450</a></p>
-<div class="course-band"><div><strong>你需要会什么</strong><p>熟悉 VLA 可以直接进入第 1 章。<a href="start.html">新手准备页</a>补终端和 Python，坐标知识随课学习。</p></div><div><strong>你将亲手完成什么</strong><p>运行机械臂，构建技能接口与可恢复的任务循环。</p></div><div><strong>实验从哪里开始</strong><p>独立的简化 MuJoCo 环境；先理解，再接入模型。</p></div></div>
-<section class="section" id="curriculum"><span class="label">LEARNING PATH / 学习路线</span><div class="section-lead"><h2>每一章，解决一个具体问题</h2><p>按顺序完成前置知识，再把观察、技能与决策连起来。每章都有动手步骤、验收标准、故障排查和延伸阅读。</p></div><p class="progress-note"><span id="progress-count">0 / {CHAPTER_COUNT} 章已完成</span> · 进度保存在当前浏览器，可随时取消勾选。</p><div class="roadmap">{roadmap()}</div><div class="lab-note"><strong>两条动手入口</strong><br>第一次接触机器人，从第 1 章开始；已经跑通基础实验，从 <a href="learn/10.html">第 10 章的任务记忆</a> 继续。默认离线主线无需模型密钥。第 8、12 章是视觉支线，第 13、14 章分别探索程序计划与学习技能；<a href="learn/16.html">第 16 章</a>说明毕业任务实际组合了哪些模块。正文演示可以就地播放，再用实验日志验证。</div></section>
-<section class="section" id="cases"><span class="label">FIELD NOTES / 从真实轨迹提问</span><h2>原来的展厅，成为课堂里的案例库</h2><p class="section-lead">不要只看机器人是否做完。尝试找出：它知道什么、何时决策、哪里出错，以及什么证据说明任务完成。案例与教学实验分开标注，保留各自的实现条件。</p><div class="cases">
-<article class="case"><a href="gallery.html#demo-mems-target-shift-libero-three"><img src="media/mems-target-shift-libero-three-t00.jpg" alt="MemS 仿真机械臂与桌面上的容器" loading="lazy"></a><h3>目标移动后，旧计划还有效吗？</h3><p>从空间记忆案例，理解观察的时效性，以及为什么执行之后还要检查。</p><div class="case-links"><a href="learn/11.html">先学第 11 章 →</a><a href="gallery.html#demo-mems-target-shift-libero-three">打开案例 ↗</a></div></article>
+<section class="hero" aria-labelledby="course-title">
+<div class="hero-copy">
+<a class="label" href="https://github.com/datawhalechina/DOPMC/issues/450">Datawhale 开源教程</a>
+<h1 id="course-title">动手学<br>机器人 Agent</h1>
+<p class="intro">从 VLA、WAM 到机器人 Agent。用同一台 MuJoCo 机械臂，看懂观察、技能与执行反馈。</p>
+<div class="actions"><a class="primary" href="learn/01.html">阅读第 1 章 <span aria-hidden="true">→</span></a><a class="secondary" href="start.html">终端与 Python 准备</a></div>
+<p class="small">16 章 · 本地仿真实验 · 无需实体机器人</p>
+</div>
+<figure class="hero-loop">
+<figcaption>机器人 Agent 的决策循环</figcaption>
+<ol>
+<li><strong>观察</strong><span>发现蓝色目标区移动</span></li>
+<li><strong>决策</strong><span>获取新坐标，调整下一步</span></li>
+<li><strong>执行</strong><span>调用 <code>move()</code> 和 <code>release()</code></span></li>
+</ol>
+<p><span aria-hidden="true">↺</span> 检查结果，更新观察</p>
+</figure>
+</section>
+<section class="section" id="curriculum" aria-labelledby="curriculum-title">
+<div class="section-title"><h2 id="curriculum-title">学习路线</h2><p class="progress-note"><span id="progress-count">0 / {CHAPTER_COUNT} 章已完成</span> · 进度保存在当前浏览器</p></div>
+<div class="roadmap">{roadmap()}</div>
+<p class="route-note">基础实验可离线运行。已跑通前 9 章，可以从 <a href="learn/10.html">任务记忆</a> 继续。</p>
+</section>
+<section class="section" id="cases"><h2>实验案例</h2><p class="section-lead">从真实轨迹找出机器人获得了什么信息、何时改变动作，以及它如何确认任务完成。</p><div class="cases">
+<article class="case"><video controls playsinline preload="none" poster="media/mems-target-shift-libero-three-t00.jpg" aria-label="MemS 仿真案例：目标容器移动后的抓放"><source src="media/mems-target-shift-libero-three-t00.mp4" type="video/mp4"></video><h3>目标移动后，旧计划还有效吗？</h3><p>从空间记忆案例，理解观察的时效性，以及为什么执行之后还要检查。</p><div class="case-links"><a href="learn/11.html">先学第 11 章 →</a><a href="gallery.html#demo-mems-target-shift-libero-three">打开案例 ↗</a></div></article>
 <article class="case"><a href="gallery.html#demo-pyrualean-astra-cells-20261028"><img src="media/pyrualean-object2-seed4-20261028-a01.jpg" alt="PyRUA 仿真任务中的机械臂与目标物体" loading="lazy"></a><h3>模型生成代码，就能控制机器人吗？</h3><p>把程序、技能与底层控制分开看，追踪决策怎样变成一次实际动作。</p><div class="case-links"><a href="learn/13.html">先学第 13 章 →</a><a href="gallery.html#demo-pyrualean-astra-cells-20261028">打开案例 ↗</a></div></article>
 <article class="case"><a href="gallery.html#demo-robomme-pick-count"><img src="media/robomme-pick-count-test0.png" alt="RoboMME 计数抓取任务的仿真桌面" loading="lazy"></a><h3>怎么知道“做够了”，可以停止？</h3><p>把自然语言要求变成明确的完成条件，区分动作执行与任务成功。</p><div class="case-links"><a href="learn/10.html">先学第 10 章 →</a><a href="gallery.html#demo-robomme-pick-count">打开案例 ↗</a></div></article>
 </div><div class="actions"><a class="secondary" href="gallery.html">浏览全部实验案例 →</a><a class="secondary" href="experiments.html">查看原始实验档案 →</a></div></section>
-<section class="section"><div class="starter"><div><span class="label">HANDS ON / 从一个最小实验开始</span><h3>让第一次运行保持简单</h3><p>下载并解压实验包，在解压目录创建 Python 环境。第 2 章包含完整安装、环境检查与排错说明。</p><p>机械臂采用简化 SCARA 结构，抓取使用显式附着约束。它用来讲清任务逻辑，不代表真实夹爪的摩擦抓取能力。</p><a class="secondary" href="learn/02.html">查看安装与第一轮实验 →</a></div><pre><code>python -m pip install -r lab/requirements.txt
+<section class="section"><div class="starter"><div><h2>运行本地实验</h2><p>下载并解压实验包，按第 2 章配置 Python 环境，再运行 MuJoCo 自检和第一次搬运。</p><div class="actions"><a class="primary" href="downloads/hands-on-robot-agent-lab.zip" download>下载实验包 ↓</a><a class="secondary" href="learn/02.html">查看安装步骤 →</a></div></div><pre><code>python -m pip install -r lab/requirements.txt
 python lab/run.py doctor
 python lab/run.py baseline --out runs/baseline
 python lab/run.py agent --mode scripted --out runs/agent</code></pre></div></section>
@@ -126,7 +159,7 @@ python lab/run.py agent --mode scripted --out runs/agent</code></pre></div></sec
 def build_lessons():
     output = DOCS/'learn'
     output.mkdir(exist_ok=True)
-    for number,(title,subtitle,filename) in enumerate(CHAPTERS,1):
+    for number, (title, subtitle, _) in enumerate(CHAPTERS, 1):
         # Authors may choose a more descriptive slug; the chapter number is stable.
         matches = sorted((ROOT/'course/lessons').glob(f'{number:02}-*.md'))
         if len(matches) != 1:
@@ -140,18 +173,26 @@ def build_lessons():
         nav = '<a href="../start.html">开始之前 · 终端与 Python</a>'
         for i,(name,_,_) in enumerate(CHAPTERS,1):
             if i in {g[0] for g in GROUPS}: nav += '<div class="nav-group">'+chapter_group(i)+'</div>'
-            nav += f'<a href="{i:02}.html"'+(' aria-current="page"' if i==number else '')+f'>{i:02} · {name}</a>'
+            nav += f'<a class="lesson-link" href="{i:02}.html"'+(' aria-current="page"' if i==number else '')+f'><span>{i:02}</span><span>{html.escape(name)}</span></a>'
         prev = f'<a rel="prev" href="{number-1:02}.html">← 上一章</a>' if number>1 else '<a href="../index.html">← 学习路线</a>'
         nxt = f'<a rel="next" href="{number+1:02}.html">下一章 →</a>' if number<CHAPTER_COUNT else '<a href="../gallery.html">带着问题看案例 →</a>'
-        body = f'''<main id="main" class="lesson-layout"><aside class="course-nav" aria-label="课程目录"><details open><summary>课程目录 · {CHAPTER_COUNT} 章</summary><nav>{nav}<div class="nav-group">继续动手</div><a href="../downloads/hands-on-robot-agent-lab.zip" download>下载教学实验包 ↓</a><a href="../gallery.html">实验案例库 ↗</a></nav></details></aside><div class="reading"><header><div class="label">第 {number:02} 章 / {chapter_group(number)}</div><h1>{title}</h1><p>{subtitle}</p><div class="lesson-meta">讲解 · 动手实验 · 验收检查 · 练习</div></header><details class="toc-box"><summary>本章内容</summary>{md.toc}</details><article>{article}</article><div class="lab-note">本课程实验使用独立的简化教学环境。标为“展厅阅读案例”的录像采用各自的机器人与模型设置；标为“本课实验录像”的内容来自本课程代码的实际运行。<br><a href="{REPO}/blob/main/{source.relative_to(ROOT).as_posix()}">查看本章源文件</a> · <a href="{REPO}/blob/main/lab/{'GUIDE.md' if number<=9 else 'ADVANCED_GUIDE.md'}">查看实验说明</a></div><div class="lesson-bottom"><label class="finish-label"><input type="checkbox" id="lesson-complete" data-lesson="{number}">我已完成本章学习与验收</label><p class="progress-note" id="progress-status" role="status">学习进度仅保存在当前浏览器。</p><nav class="pager" aria-label="章节翻页">{prev}{nxt}</nav></div></div></main>'''
+        body = f'''<main id="main" class="lesson-layout"><aside class="course-nav" aria-label="课程目录"><details open><summary>课程目录 · {CHAPTER_COUNT} 章</summary><nav>{nav}<div class="nav-group">继续动手</div><a href="../downloads/hands-on-robot-agent-lab.zip" download>下载教学实验包 ↓</a><a href="../gallery.html">实验案例库 ↗</a></nav></details></aside><div class="reading"><header class="lesson-heading"><div class="label">{chapter_group(number)} / 第 {number:02} 章</div><h1>{html.escape(title)}</h1><p>{html.escape(subtitle)}</p></header>{lesson_toc(md.toc)}<div class="reading-content"><article>{article}</article><div class="lab-note">本课程实验使用独立的简化教学环境。标为“展厅阅读案例”的录像采用各自的机器人与模型设置；标为“本课实验录像”的内容来自本课程代码的实际运行。<br><a href="{REPO}/blob/main/{source.relative_to(ROOT).as_posix()}">查看本章源文件</a> · <a href="{REPO}/blob/main/lab/{'GUIDE.md' if number<=9 else 'ADVANCED_GUIDE.md'}">查看实验说明</a></div><div class="lesson-bottom"><label class="finish-label"><input type="checkbox" id="lesson-complete" data-lesson="{number}">我已完成本章学习与验收</label><p class="progress-note" id="progress-status" role="status">学习进度仅保存在当前浏览器。</p><nav class="pager" aria-label="章节翻页">{prev}{nxt}</nav></div></div></div></main>'''
         (output/f'{number:02}.html').write_text(page(title,body,'../',subtitle),encoding='utf-8')
+
+def lesson_toc(toc):
+    return (
+        '<aside class="lesson-toc" aria-label="本章目录"><details class="toc-box" open>'
+        f'<summary>本章目录</summary><nav aria-label="正文小节">{toc}</nav>'
+        '</details></aside>'
+    )
+
 
 def build_start():
     source = ROOT/'course/start-here.md'
     text = re.sub(r'^# [^\n]+\n', '', source.read_text(encoding='utf-8'), count=1)
     md = markdown.Markdown(extensions=['fenced_code','tables','toc'])
     article = md.convert(text)
-    body = f'''<main id="main" class="lesson-layout"><aside class="course-nav" aria-label="入门导航"><nav><a href="start.html" aria-current="page">开始之前 · 终端与 Python</a><a href="learn/01.html">第 1 章 · 理解机器人 Agent</a><a href="learn/02.html">第 2 章 · 安装与第一轮实验</a><a href="index.html#curriculum">查看完整 16 章</a></nav></aside><div class="reading"><header><div class="label">START HERE / 新手准备</div><h1>第一次用终端和 Python</h1><p>从一个能亲手核对的小程序开始，为机器人实验做好准备。</p></header><details class="toc-box"><summary>本页内容</summary>{md.toc}</details><article>{article}</article><nav class="pager" aria-label="继续学习"><a href="index.html">← 学习路线</a><a href="learn/01.html">进入第 1 章 →</a></nav></div></main>'''
+    body = f'''<main id="main" class="lesson-layout"><aside class="course-nav" aria-label="入门导航"><details open><summary>入门导航</summary><nav><a href="start.html" aria-current="page">开始之前 · 终端与 Python</a><a href="learn/01.html">第 1 章 · 理解机器人 Agent</a><a href="learn/02.html">第 2 章 · 安装与第一轮实验</a><a href="index.html#curriculum">查看完整 16 章</a></nav></details></aside><div class="reading"><header class="lesson-heading"><div class="label">新手准备</div><h1>第一次用终端和 Python</h1><p>从一个能亲手核对的小程序开始，为机器人实验做好准备。</p></header>{lesson_toc(md.toc)}<div class="reading-content"><article>{article}</article><nav class="pager" aria-label="继续学习"><a href="index.html">← 学习路线</a><a href="learn/01.html">进入第 1 章 →</a></nav></div></div></main>'''
     (DOCS/'start.html').write_text(page('开始之前：终端与 Python', body), encoding='utf-8')
 
 

@@ -1,26 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="306" viewBox="0 0 640 306">
 <title>俯视 SCARA 机械臂与坐标轴</title>
 <defs>
-<marker id="ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#41574e"/></marker>
-<marker id="green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#09614e"/></marker>
+<marker id="ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#4c5f79"/></marker>
+<marker id="accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#164bc4"/></marker>
 <marker id="red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#a3362e"/></marker>
-<marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#24517d"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#385984"/></marker>
 </defs>
 <g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
-<rect x="1" y="1" width="638" height="304" rx="18" fill="#f5f8f5" stroke="#d5ded7"/>
-<text x="27" y="39" text-anchor="start" font-size="22" font-weight="720" fill="#09614e">俯视图 · XY 平面</text>
-<polyline points="55,204 566,204" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
-<polyline points="320,237 320,68" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
-<text x="575" y="211" text-anchor="start" font-size="22" font-weight="550" fill="#192c26">+x</text>
-<text x="327" y="66" text-anchor="start" font-size="22" font-weight="550" fill="#192c26">+y</text>
-<text x="329" y="232" text-anchor="start" font-size="20" font-weight="550" fill="#41574e">世界原点</text>
-<polyline points="89,204 243,117 389,149" fill="none" stroke="#09614e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="89" cy="204" r="12" fill="#09614e" stroke="white"/>
-<circle cx="243" cy="117" r="12" fill="#09614e" stroke="white"/>
-<circle cx="389" cy="149" r="11" fill="#24517d" stroke="white"/>
-<text x="100" y="238" text-anchor="start" font-size="20" font-weight="550" fill="#41574e">机械臂基座</text>
-<text x="143" y="123" text-anchor="start" font-size="20" font-weight="650" fill="#09614e">0.35 m</text>
-<text x="341" y="112" text-anchor="start" font-size="20" font-weight="650" fill="#09614e">0.30 m</text>
-<text x="412" y="155" text-anchor="start" font-size="22" font-weight="700" fill="#24517d">末端目标</text>
-<text x="320" y="287" text-anchor="middle" font-size="20" font-weight="550" fill="#41574e">竖直关节单独改变 z 高度，垂直于图面</text>
+<rect x="1" y="1" width="638" height="304" rx="18" fill="#f5f8fe" stroke="#dbe4ef"/>
+<text x="27" y="39" text-anchor="start" font-size="22" font-weight="720" fill="#164bc4">俯视图 · XY 平面</text>
+<polyline points="55,204 566,204" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<polyline points="320,237 320,68" fill="none" stroke="#4c5f79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<text x="575" y="211" text-anchor="start" font-size="22" font-weight="550" fill="#14243b">+x</text>
+<text x="327" y="66" text-anchor="start" font-size="22" font-weight="550" fill="#14243b">+y</text>
+<text x="329" y="232" text-anchor="start" font-size="20" font-weight="550" fill="#4c5f79">世界原点</text>
+<polyline points="89,204 243,117 389,149" fill="none" stroke="#164bc4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="89" cy="204" r="12" fill="#164bc4" stroke="white"/>
+<circle cx="243" cy="117" r="12" fill="#164bc4" stroke="white"/>
+<circle cx="389" cy="149" r="11" fill="#385984" stroke="white"/>
+<text x="100" y="238" text-anchor="start" font-size="20" font-weight="550" fill="#4c5f79">机械臂基座</text>
+<text x="143" y="123" text-anchor="start" font-size="20" font-weight="650" fill="#164bc4">0.35 m</text>
+<text x="341" y="112" text-anchor="start" font-size="20" font-weight="650" fill="#164bc4">0.30 m</text>
+<text x="412" y="155" text-anchor="start" font-size="22" font-weight="700" fill="#385984">末端目标</text>
+<text x="320" y="287" text-anchor="middle" font-size="20" font-weight="550" fill="#4c5f79">竖直关节单独改变 z 高度，垂直于图面</text>
 </g></svg>
