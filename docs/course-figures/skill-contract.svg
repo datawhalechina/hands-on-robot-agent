@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="306" viewBox="0 0 640 306">
+<title>一次抓取调用的输入、条件与结果</title>
+<defs>
+<marker id="ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#41574e"/></marker>
+<marker id="green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#09614e"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#a3362e"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#24517d"/></marker>
+</defs>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<rect x="1" y="1" width="638" height="304" rx="18" fill="#f5f8f5" stroke="#d5ded7"/>
+<rect x="24" y="21" width="184" height="68" rx="12" fill="#e5edf8" stroke="#a8bdd7"/>
+<text x="116.0" y="51.0" text-anchor="middle" font-size="23" font-weight="680" fill="#24517d">请求 grasp()</text>
+<text x="116.0" y="77.0" text-anchor="middle" font-size="20" font-weight="500" fill="#24517d">使用当前状态</text>
+<polyline points="215,55 253,55" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="261" y="21" width="355" height="68" rx="12" fill="#faf0d9" stroke="#d4b776"/>
+<text x="438.5" y="51.0" text-anchor="middle" font-size="23" font-weight="680" fill="#77520c">检查前置条件</text>
+<text x="438.5" y="77.0" text-anchor="middle" font-size="20" font-weight="500" fill="#77520c">手空着，末端靠近方块</text>
+<polyline points="390,96 390,121 169,121 169,153" fill="none" stroke="#09614e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green)"/>
+<polyline points="487,96 487,153" fill="none" stroke="#a3362e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#red)"/>
+<rect x="24" y="160" width="287" height="76" rx="12" fill="#e0f0e7" stroke="#96c6b1"/>
+<text x="167.5" y="194.0" text-anchor="middle" font-size="23" font-weight="680" fill="#09614e">尝试抓取</text>
+<text x="167.5" y="220.0" text-anchor="middle" font-size="20" font-weight="500" fill="#09614e">成功时启用附着约束</text>
+<rect x="329" y="160" width="287" height="76" rx="12" fill="#fbe9e6" stroke="#e1aaa2"/>
+<text x="472.5" y="194.0" text-anchor="middle" font-size="23" font-weight="680" fill="#a3362e">条件不满足</text>
+<text x="472.5" y="220.0" text-anchor="middle" font-size="20" font-weight="500" fill="#a3362e">返回失败原因</text>
+<text x="320" y="278" text-anchor="middle" font-size="23" font-weight="650" fill="#192c26">返回 ok、当前观察，失败时附 error</text>
+</g></svg>

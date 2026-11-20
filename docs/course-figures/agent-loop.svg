@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="296" viewBox="0 0 640 296">
+<title>机器人 Agent 的任务反馈循环</title>
+<defs>
+<marker id="ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#41574e"/></marker>
+<marker id="green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#09614e"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#a3362e"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9 z" fill="#24517d"/></marker>
+</defs>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<rect x="1" y="1" width="638" height="294" rx="18" fill="#f5f8f5" stroke="#d5ded7"/>
+<rect x="24" y="23" width="142" height="58" rx="12" fill="#faf0d9" stroke="#d4b776"/>
+<text x="95.0" y="60.0" text-anchor="middle" font-size="23" font-weight="680" fill="#77520c">任务目标</text>
+<polyline points="173,52 212,52" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="220" y="23" width="172" height="58" rx="12" fill="#e5edf8" stroke="#a8bdd7"/>
+<text x="306.0" y="60.0" text-anchor="middle" font-size="23" font-weight="680" fill="#24517d">观察状态</text>
+<polyline points="400,52 434,52" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="442" y="23" width="174" height="58" rx="12" fill="#e0f0e7" stroke="#96c6b1"/>
+<text x="529.0" y="60.0" text-anchor="middle" font-size="23" font-weight="680" fill="#09614e">选择技能</text>
+<polyline points="529,89 529,134" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="442" y="142" width="174" height="58" rx="12" fill="#ffffff" stroke="#cad8d0"/>
+<text x="529.0" y="179.0" text-anchor="middle" font-size="23" font-weight="680" fill="#192c26">执行运动</text>
+<polyline points="434,171 400,171" fill="none" stroke="#41574e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ink)"/>
+<rect x="220" y="142" width="172" height="58" rx="12" fill="#e0f0e7" stroke="#96c6b1"/>
+<text x="306.0" y="179.0" text-anchor="middle" font-size="23" font-weight="680" fill="#09614e">检查结果</text>
+<polyline points="211,171 174,171" fill="none" stroke="#09614e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green)"/>
+<rect x="24" y="142" width="142" height="58" rx="12" fill="#e0f0e7" stroke="#96c6b1"/>
+<text x="95.0" y="179.0" text-anchor="middle" font-size="23" font-weight="680" fill="#09614e">达标，结束</text>
+<polyline points="305,207 305,232 194,232 194,109 305,109 305,90" fill="none" stroke="#24517d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<text x="320" y="270" text-anchor="middle" font-size="22" font-weight="650" fill="#24517d">未达标时读取新状态，再选择动作</text>
+</g></svg>

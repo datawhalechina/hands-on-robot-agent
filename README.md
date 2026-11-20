@@ -8,7 +8,7 @@
 
 ## 学习内容
 
-1. 拆解一个机器人 Agent
+1. 从 VLA、WAM 到机器人 Agent
 2. 运行第一个仿真环境
 3. 机器人究竟知道什么
 4. 从坐标到机械臂运动
@@ -71,6 +71,7 @@ python lab/advanced.py capstone --seed 7 --perturb miss-grasp --out runs/capston
 | `lab/` | 教学仿真代码、场景、依赖与测试 |
 | `build_course.py` | 生成课程网页与可下载实验包 |
 | `docs/learn/` | 生成的课程阅读页 |
+| `course_figures.py` | 前六章 SVG 示意图生成源码 |
 | `course/demos.json` | 正文演示选择与教学说明 |
 | `docs/course-media/` | 课程实际仿真录像、字幕、截图与事件记录 |
 | `tools/record_course_demos.py` | 录制既有控制器的实际仿真过程 |

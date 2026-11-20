@@ -8,11 +8,13 @@ import re
 import zipfile
 import markdown
 
+from course_figures import build_figures
+
 ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / 'docs'
 REPO = 'https://github.com/datawhalechina/hands-on-robot-agent'
 CHAPTERS = [
-    ('拆解一个机器人 Agent', '任务、观察、决策与执行分别由谁负责', '01-robot-agent.md'),
+    ('从 VLA、WAM 到机器人 Agent', '从动作策略出发，理解 Task、Skill 和执行反馈', '01-robot-agent.md'),
     ('运行第一个仿真环境', '安装 MuJoCo，让机械臂完成一次任务', '02-first-simulation.md'),
     ('机器人究竟知道什么', '区分物理状态、传感器观察与隐藏信息', '03-observation-state.md'),
     ('从坐标到机械臂运动', '理解坐标系、逆运动学与控制器', '04-coordinates-motion.md'),
@@ -97,17 +99,17 @@ def footer(prefix=''):
 def page(title, body, prefix='', description='通过十六章循序渐进的教程和可运行的 MuJoCo 实验，学习机器人 Agent 的感知、记忆、技能、决策与评测。'):
     document_title = title if title == '动手学机器人 Agent' else title + ' · 动手学机器人 Agent'
     return f'''<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{html.escape(description, quote=True)}"><meta name="theme-color" content="#f3f4ee"><title>{html.escape(document_title)}</title><link rel="stylesheet" href="{prefix}course.css?v=novice-onramp"><script defer src="{prefix}course.js?v=novice-onramp"></script></head><body data-lesson-count="{CHAPTER_COUNT}">{topbar(prefix)}{body}{footer(prefix)}</body></html>\n'''
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{html.escape(description, quote=True)}"><meta name="theme-color" content="#f3f4ee"><title>{html.escape(document_title)}</title><link rel="stylesheet" href="{prefix}course.css?v=architecture-intro"><script defer src="{prefix}course.js?v=novice-onramp"></script></head><body data-lesson-count="{CHAPTER_COUNT}">{topbar(prefix)}{body}{footer(prefix)}</body></html>\n'''
 
 def chapter_links(start, end):
     return ''.join(f'<a class="chapter-row" data-chapter="{i}" href="learn/{i:02}.html"><span class="chapter-num">{i:02}</span><span class="chapter-name">{html.escape(CHAPTERS[i-1][0])}<small>{html.escape(CHAPTERS[i-1][1])}</small></span><span class="arrow" aria-hidden="true">↗</span></a>' for i in range(start, end+1))
 
 def build_home():
     body = f'''<main id="main" class="wrap">
-<section class="hero"><div><span class="label">一条从 Python 到机器人决策的学习路线</span><h1>动手学<br>机器人 Agent</h1><p class="intro">从一次抓取开始，学会让机器人理解任务、调用技能、检查结果，并在失败后继续行动。</p><div class="actions"><a class="primary" href="start.html">第一次学习，从这里开始 →</a><a class="secondary" href="learn/01.html">直接读第 1 章 →</a><a class="secondary" href="downloads/hands-on-robot-agent-lab.zip" download>下载教学实验包 ↓</a></div><p class="small">16 章循序渐进 · 本地仿真实验 · 无需实体机器人</p></div>
+<section class="hero"><div><span class="label">从动作策略到机器人任务闭环</span><h1>动手学<br>机器人 Agent</h1><p class="intro">从熟悉的 VLA 出发，对照 WAM 和机器人 Agent，再用同一台仿真机械臂看懂技能、决策和失败恢复。</p><div class="actions"><a class="primary" href="learn/01.html">从 VLA 读起 →</a><a class="secondary" href="start.html">终端与 Python 准备</a><a class="secondary" href="downloads/hands-on-robot-agent-lab.zip" download>下载教学实验包 ↓</a></div><p class="small">16 章循序渐进 · 本地仿真实验 · 无需实体机器人</p></div>
 <figure><video controls playsinline preload="metadata" poster="media/mems-target-shift-libero-three-t00.jpg" aria-label="已有展厅案例：目标碗移动后的机器人任务轨迹"><source src="media/mems-target-shift-libero-three-t00.mp4" type="video/mp4"></video><figcaption><strong>如果目标突然移动，机器人该怎么办？</strong>先带着这个问题学习，再回到 MemS 案例看它如何处理变化。视频来自原展厅；教学实验从更小的任务起步。<br><a href="gallery.html#demo-mems-target-shift-libero-three">查看完整案例与来源 ↗</a></figcaption></figure></section>
 <p class="small">已通过 Datawhale 立项 · <a href="https://github.com/datawhalechina/DOPMC/issues/450">查看立项记录 #450</a></p>
-<div class="course-band"><div><strong>你需要会什么</strong><p>基础 Python 即可；<a href="start.html">新手准备页</a>补终端、文件与语法，坐标知识随课学习。</p></div><div><strong>你将亲手完成什么</strong><p>运行机械臂，构建技能接口与可恢复的任务循环。</p></div><div><strong>实验从哪里开始</strong><p>独立的简化 MuJoCo 环境；先理解，再接入模型。</p></div></div>
+<div class="course-band"><div><strong>你需要会什么</strong><p>熟悉 VLA 可以直接进入第 1 章。<a href="start.html">新手准备页</a>补终端和 Python，坐标知识随课学习。</p></div><div><strong>你将亲手完成什么</strong><p>运行机械臂，构建技能接口与可恢复的任务循环。</p></div><div><strong>实验从哪里开始</strong><p>独立的简化 MuJoCo 环境；先理解，再接入模型。</p></div></div>
 <section class="section" id="curriculum"><span class="label">LEARNING PATH / 学习路线</span><div class="section-lead"><h2>每一章，解决一个具体问题</h2><p>按顺序完成前置知识，再把观察、技能与决策连起来。每章都有动手步骤、验收标准、故障排查和延伸阅读。</p></div><p class="progress-note"><span id="progress-count">0 / {CHAPTER_COUNT} 章已完成</span> · 进度保存在当前浏览器，可随时取消勾选。</p><div class="roadmap">{roadmap()}</div><div class="lab-note"><strong>两条动手入口</strong><br>第一次接触机器人，从第 1 章开始；已经跑通基础实验，从 <a href="learn/10.html">第 10 章的任务记忆</a> 继续。默认离线主线无需模型密钥。第 8、12 章是视觉支线，第 13、14 章分别探索程序计划与学习技能；<a href="learn/16.html">第 16 章</a>说明毕业任务实际组合了哪些模块。正文演示可以就地播放，再用实验日志验证。</div></section>
 <section class="section" id="cases"><span class="label">FIELD NOTES / 从真实轨迹提问</span><h2>原来的展厅，成为课堂里的案例库</h2><p class="section-lead">不要只看机器人是否做完。尝试找出：它知道什么、何时决策、哪里出错，以及什么证据说明任务完成。案例与教学实验分开标注，保留各自的实现条件。</p><div class="cases">
 <article class="case"><a href="gallery.html#demo-mems-target-shift-libero-three"><img src="media/mems-target-shift-libero-three-t00.jpg" alt="MemS 仿真机械臂与桌面上的容器" loading="lazy"></a><h3>目标移动后，旧计划还有效吗？</h3><p>从空间记忆案例，理解观察的时效性，以及为什么执行之后还要检查。</p><div class="case-links"><a href="learn/11.html">先学第 11 章 →</a><a href="gallery.html#demo-mems-target-shift-libero-three">打开案例 ↗</a></div></article>
@@ -168,6 +170,7 @@ def build_download():
     (output/'agent-fieldnotes-lab.zip').write_bytes((output/'hands-on-robot-agent-lab.zip').read_bytes())
 
 if __name__ == '__main__':
+    build_figures(DOCS / 'course-figures')
     build_start()
     build_lessons()
     build_download()
